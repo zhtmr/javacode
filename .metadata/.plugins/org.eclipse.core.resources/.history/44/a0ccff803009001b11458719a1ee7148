@@ -14,7 +14,7 @@ import java.util.TreeMap;
 public class DataRepository implements IMenuManage {
 
 	private String getFood(Food f) {
-		return f.getPicture() + "," + f.getName() + "," + f.getContents() + "," + f.getPrice();
+		return f.getPicture() + " , " + f.getName() + " , " + f.getContents() + " , " + f.getPrice();
 	}
 
 	@Override
@@ -69,9 +69,13 @@ public class DataRepository implements IMenuManage {
 		try {
 			FileReader fr = new FileReader("menu.txt");
 			BufferedReader br = new BufferedReader(fr);
-			String readline;
+			Food readline;
 			while ((readline = br.readLine()) != null) {
-				menu.put(String.valueOf(no++), getFood(readline));
+				menu.put(String.valueOf(no++), readline);
+				
+//				String[] dataArr = readline.split(",");
+//				menu += no + ". " + dataArr[1] + "\n";
+//				no++;
 
 			}
 		} catch (FileNotFoundException e) {
@@ -82,13 +86,4 @@ public class DataRepository implements IMenuManage {
 		return menu;
 	}
 
-	private Food getFood(String readLine) {
-		Food food = new Food();
-		String[] datas = readLine.split(",");
-		food.setPicture(datas[0]);
-		food.setName(datas[1]);
-		food.setContents(datas[2]);
-		food.setPrice(Integer.parseInt(datas[3]));
-		return food;
-	}
 }

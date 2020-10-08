@@ -14,7 +14,7 @@ import java.util.TreeMap;
 public class DataRepository implements IMenuManage {
 
 	private String getFood(Food f) {
-		return f.getPicture() + "," + f.getName() + "," + f.getContents() + "," + f.getPrice();
+		return f.getPicture() + " , " + f.getName() + " , " + f.getContents() + " , " + f.getPrice();
 	}
 
 	@Override
