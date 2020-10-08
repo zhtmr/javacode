@@ -46,6 +46,9 @@ public class MainClass2 {
 //		Insert();
 		IMenuManage data = new DeleteMenu();
 		data.Select();
+		Scanner in = new Scanner(System.in);
+		data.Delete(in);
+//		data.Delete();
 		
 
 

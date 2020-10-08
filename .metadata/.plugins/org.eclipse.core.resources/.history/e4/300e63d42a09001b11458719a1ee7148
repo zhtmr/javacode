@@ -1,0 +1,56 @@
+package Pos.Menu;
+
+import java.util.Map;
+import java.util.Map.Entry;
+import java.util.Scanner;
+
+public class DeleteMenu implements IMenuManage{
+	
+	private String getMenu(Map<String, String> menuMap) {
+		String menuStr="";
+		
+		for(Entry<String, String> entry : menuMap.entrySet()) {
+			menuStr = entry.getKey()().split(",");
+			System.out.println(entry.getValue()()+". "+value[1]);
+		}
+		return menuStr;
+	}
+	
+	private String getMenu(String menu) {
+		return menu.split(",")[1];
+	}
+
+	@Override
+	public Object Insert(Object... o) {
+		return null;
+	}
+
+	@Override
+	public Object Delete(Object... o) {
+		
+		
+		return null;
+	}
+
+	@Override
+	public Object Modify(Object... o) {
+		return null;
+	}
+
+	@Override
+	public Object Select(Object... o) {
+		IMenuManage iMenu = new DataRepository();
+		Map<String, String> menuMap = (Map<String, String>) iMenu.Select();
+		System.out.println("메뉴 삭제");
+		System.out.println("=======================");
+		System.out.println(getMenu(menuMap));
+		System.out.println("=======================");
+		System.out.println("삭제할 메뉴를 고르세요");
+		Scanner in = new Scanner(System.in);
+		in.nextInt();
+		
+		
+		return null;
+	}
+
+}
