@@ -1,1 +1,2 @@
-KakaoTalk.exe [C:\Program Files (x86)\Kakao\KakaoTalk\],n,n,0
+idea64.exe [C:\Program Files\JetBrains\IntelliJ IDEA Community Edition 2020.2.3\bin\],수정됨,나,9
+없음,수정,n,9

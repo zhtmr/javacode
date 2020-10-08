@@ -1,0 +1,52 @@
+package Pos.Menu;
+
+import java.util.Map;
+import java.util.Scanner;
+
+public class ModifyMenu extends DeleteMenu implements IMenuManage{
+	
+//	private String getMenu(Map<String, Food> menuMap) {
+//		String menuStr = "";
+//
+//		for (Entry<String, Food> entry : menuMap.entrySet()) {
+//			menuStr += entry.getKey() + ". ";
+//			Food food = entry.getValue();
+//			menuStr += food.getName() + "\n";
+//		}
+//		return menuStr;
+//	}
+	
+	@Override
+	public Object Insert(Object... o) {
+		
+		return null;
+	}
+
+	@Override
+	public Object Delete(Object... o) {
+		
+		return null;
+	}
+
+	@Override
+	public Object Modify(Object... o) {
+		Scanner in = (Scanner) o[0];
+		String n = in.next();
+		
+		IMenuManage iMenu = new DataRepository();
+		Map<String, Food> menuMap = (Map<String, Food>) iMenu.Select();
+		
+		System.out.println("선택된 값 : "+menuMap.get(n).getName());
+		
+
+		
+		return null;
+	}
+
+	@Override
+	public Object Select(Object... o) {
+		super.Select("수정");
+		return null;
+	}
+
+}

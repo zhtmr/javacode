@@ -51,8 +51,7 @@ public class DataRepository implements IMenuManage {
 
 	@Override
 	public Object Modify(Object... o) {
-		Map<String, Food> menuMap = (Map<String, Food>) o[0];
-//		Entry<String, Food> entry = menuMap.entrySet();
+		
 		return null;
 	}
 
