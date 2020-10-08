@@ -1,1 +1,1 @@
-없음,가가,나나,99
+KakaoTalk.exe [C:\Program Files (x86)\Kakao\KakaoTalk\],n,n,0

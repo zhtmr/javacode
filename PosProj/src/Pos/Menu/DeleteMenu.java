@@ -17,10 +17,6 @@ public class DeleteMenu implements IMenuManage {
 		return menuStr;
 	}
 
-//	// menu 잘라서 1번째
-//	private String getMenu(String menu) {
-//		return menu.split(",")[1];
-//	}
 
 	@Override
 	public Object Insert(Object... o) {
@@ -48,18 +44,20 @@ public class DeleteMenu implements IMenuManage {
 
 	@Override
 	public Object Modify(Object... o) {
+	
 		return null;
 	}
 
 	@Override
 	public Object Select(Object... o) {
 		IMenuManage iMenu = new DataRepository();
+		String delOrMod = (String) o[0];
 		Map<String, Food> menuMap = (Map<String, Food>) iMenu.Select();
-		System.out.println("메뉴 삭제");
+		System.out.println("메뉴 "+delOrMod);
 		System.out.println("=======================");
 		System.out.println(getMenu(menuMap));
 		System.out.println("=======================");
-		System.out.println("삭제할 메뉴를 고르세요");
+		System.out.println(delOrMod+"할 메뉴를 고르세요");
 
 		return null;
 	}

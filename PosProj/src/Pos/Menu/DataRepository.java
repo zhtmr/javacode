@@ -45,20 +45,14 @@ public class DataRepository implements IMenuManage {
 
 	@Override
 	public Object Delete(Object... o) {
-		try {
-			FileReader fr = new FileReader("menu.txt");
-			
-			
-		} catch (FileNotFoundException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
+		
 		return null;
 	}
 
 	@Override
 	public Object Modify(Object... o) {
-
+		Map<String, Food> menuMap = (Map<String, Food>) o[0];
+//		Entry<String, Food> entry = menuMap.entrySet();
 		return null;
 	}
 

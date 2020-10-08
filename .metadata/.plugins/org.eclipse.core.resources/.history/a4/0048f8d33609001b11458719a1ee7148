@@ -1,0 +1,29 @@
+package Pos.Menu;
+
+public class ModifyMenu implements IMenuManage{
+
+	@Override
+	public Object Insert(Object... o) {
+		
+		return null;
+	}
+
+	@Override
+	public Object Delete(Object... o) {
+		
+		return null;
+	}
+
+	@Override
+	public Object Modify(Object... o) {
+		
+		return null;
+	}
+
+	@Override
+	public Object Select(Object... o) {
+		
+		return null;
+	}
+
+}

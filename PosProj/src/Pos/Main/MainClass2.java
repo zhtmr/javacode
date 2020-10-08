@@ -5,10 +5,10 @@ import java.util.Map;
 import java.util.Scanner;
 
 import Pos.Menu.DataRepository;
-import Pos.Menu.DeleteMenu;
 import Pos.Menu.Food;
 import Pos.Menu.IMenuManage;
 import Pos.Menu.MenuManageImpl;
+import Pos.Menu.ModifyMenu;
 
 public class MainClass2 {
 
@@ -44,11 +44,16 @@ public class MainClass2 {
 	public static void main(String[] args) {
 		
 //		Insert();
-		IMenuManage data = new DeleteMenu();
-		data.Select();
+		
 		Scanner in = new Scanner(System.in);
-		data.Delete(in);
-//		data.Delete();
+//		IMenuManage data = new DeleteMenu();
+//		data.Select("ªË¡¶");
+//		data.Select();
+//		data.Delete(in);
+//		
+		IMenuManage data1 = new ModifyMenu();
+		data1.Select();
+		data1.Modify(in);
 		
 
 
