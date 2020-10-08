@@ -1,0 +1,21 @@
+package Pos.Menu;
+
+import java.util.Scanner;
+
+public class Food {
+	private String picture;
+	private String name;
+	private String contents;
+	private int price;
+	
+	public String name() {
+		Scanner in = new Scanner(System.in);
+		System.out.println("이름을 등록하세요?");
+		String name = in.next();
+		if(name.equals(null)) {
+			System.out.println("이름을 등록하세요?");
+			name = in.next();
+		}
+		return name;
+	}
+}

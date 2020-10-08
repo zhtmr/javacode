@@ -1,0 +1,58 @@
+package Pos.Menu;
+
+import java.io.BufferedWriter;
+import java.io.File;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.util.Map;
+import java.util.Set;
+
+public class DataRepository implements IMenuManage{
+
+	private String getFood(Food f) {
+		return f.getPicture()+" , "+f.getName()+" , "+f.getContents()+" , "+f.getPrice();
+	}
+	
+	@Override
+	public Object Insert(Object... o) {
+		File menu = new File("menu.txt");
+		Map<String, Food> foodMap = (Map<String, Food>) o[0];
+		Set<String> keyset = foodMap.keySet();
+
+		try {
+			// 파일쓰기준비
+			BufferedWriter bw = new BufferedWriter(new FileWriter(menu));
+			if (menu.isFile() && menu.canWrite())
+				for(String key : keyset) {
+					Food food = foodMap.get(key);
+					bw.write(food.getPicture()+" , "+food.getName()+" , "+food.getContents()+" , "+food.getPrice());
+					bw.newLine();
+				}
+			bw.close();
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+		System.out.println("파일생성완료");
+
+		return foodMap;
+	}
+
+	@Override
+	public Object Delete(Object... o) {
+		
+		return null;
+	}
+
+	@Override
+	public Object Modify(Object... o) {
+		
+		return null;
+	}
+
+	@Override
+	public Object Select(Object... o) {
+		
+		return null;
+	}
+
+}

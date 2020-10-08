@@ -1,0 +1,51 @@
+package Pos.Main;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Scanner;
+
+import Pos.Menu.Food;
+import Pos.Menu.IMenuManage;
+import Pos.Menu.MenuManageImpl;
+
+public class MainClass {
+
+	public static void main(String[] args) {
+//		 Scanner in = new Scanner(System.in);
+//		 
+//		 System.out.println("방문 횟수를 입력하세요");
+//		 int visitCnt = in.nextInt();
+// 
+//		 if (visitCnt<1) {
+//			System.out.println("첫 방문 감사합니다.");
+//		}else {
+//			System.out.println("재 방문 감사합니다");
+//		}
+		 
+		 IMenuManage MenuManage = new MenuManageImpl();
+		 List<Food> foodList = new ArrayList<Food>();
+		 Scanner in = new Scanner(System.in);
+			
+		 while(true) {
+			 Food f = (Food) MenuManage.Insert(in);			
+			 String list = (String) MenuManage.Select(f);
+			 System.out.println(list);
+			 in.nextLine();
+				if("y".equalsIgnoreCase(in.nextLine()))
+					foodList.add(f);
+				System.out.println("계속등록하시겠습니까?(y/n)");
+				if("n".equalsIgnoreCase(in.nextLine())) {
+					System.out.println("등록 종료");
+					break;
+				}
+		 }
+		 
+		 for(Food l : foodList)
+			 System.out.println(l.getName());
+		 
+		 
+		 
+		 
+	}
+
+}

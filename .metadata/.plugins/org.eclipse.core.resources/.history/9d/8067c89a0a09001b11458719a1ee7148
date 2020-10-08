@@ -1,0 +1,39 @@
+package Pos.Menu;
+
+import java.util.Map;
+
+public class DataRepository implements IMenuManage{
+
+	@Override
+	public Map<String, Food> Insert(Object... o) {
+		Map<String, Food> foodMap = (Map<String, Food>) o[0];
+//		Set<String> keyset = foodMap.keySet();
+//		for(String key : keyset) {
+//			Food food = foodMap.get(key);
+//			System.out.println(food.getPicture());
+//			System.out.println(food.getName());
+//			System.out.println(food.getContents());
+//			System.out.println(food.getPrice());
+//		}
+		return foodMap;
+	}
+
+	@Override
+	public Object Delete(Object... o) {
+		
+		return null;
+	}
+
+	@Override
+	public Object Modify(Object... o) {
+		
+		return null;
+	}
+
+	@Override
+	public Object Select(Object... o) {
+		
+		return null;
+	}
+
+}
