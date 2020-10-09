@@ -1,9 +1,0 @@
-package Pos.Menu;
-
-public interface IMenuManage {
-	public Object Insert();
-	public Object Delete();
-	public Object Modify();
-	public String Select(Food f);
-
-}

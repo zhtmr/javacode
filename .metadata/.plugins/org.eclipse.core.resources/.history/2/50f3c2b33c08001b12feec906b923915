@@ -1,5 +1,0 @@
-package Pos.Menu;
-
-public interface IMenuManage {
-	public void Insert();
-}

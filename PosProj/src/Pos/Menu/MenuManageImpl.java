@@ -18,6 +18,17 @@ public class MenuManageImpl implements IMenuManage{
 		return fileDialog.getFile()+" ["+ fileDialog.getDirectory()+"]";
 	}
 	
+	// Scanner 에 한정되지 않고 모든객체 판별하게 바꾸고싶은데.......
+	public Scanner parameter(Object... o) {
+		Scanner in=null;
+		for(int i =0; i<o.length; i++) {
+			if(o[i] instanceof Scanner) {
+				in = (Scanner) o[i];
+				break;
+			}
+		}
+		return in;
+	}
 	
 	@Override
 	public Object Insert(Object...o) {
@@ -27,7 +38,10 @@ public class MenuManageImpl implements IMenuManage{
 		
 		Food f = new Food();
 		
-		Scanner in = (Scanner) o[0];
+		// 이 부분을 메소드로 구현 가능한가? : o에 오는 객체 판단하는 메소드?
+		Scanner in = parameter(o);
+		
+		
 		String value = in.nextLine();
 						
 		if ("y".equalsIgnoreCase(value)) { // value.equalsIgnoreCase("y") 이렇게 쓰면 value = null위험
