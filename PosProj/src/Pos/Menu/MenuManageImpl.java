@@ -18,7 +18,7 @@ public class MenuManageImpl implements IMenuManage{
 		return fileDialog.getFile()+" ["+ fileDialog.getDirectory()+"]";
 	}
 	
-	// Scanner 에 한정되지 않고 모든객체 판별하게 바꾸고싶은데.......
+	// TODO: Scanner 에 한정되지 않고 모든객체 판별하게 
 	public Scanner parameter(Object... o) {
 		Scanner in=null;
 		for(int i =0; i<o.length; i++) {
