@@ -1,0 +1,37 @@
+- 랜카드추가
+- ifconfig
+ip확인
+- sudo apt-get install ssh
+콘솔같은 외부에서 우분투로 접근하기위해
+- which ssh
+- which sshd
+ssh 설치 위치확인
+- sudo apt-get update
+- JAVA_HOME
+java 설치위치 표시하기위해. 환경변수
+export JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64
+- source /etc/profile
+파일변경내용 적용
+- file zilla
+원격으로 파일 업로드,다운로드 
+putty 에서 주소로 접속해서 다운받지않고 직접 파일다운받아서 올릴수있다.
+gui같음
+
+- sudo vim /usr/local/hadoop/etc/hadoop/hadoop-env.sh
+하둡에서도 JAVA_HOME 접근하게 (오동작가능성이 있어서 추가해줌)
+export JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64
+
+- vim을 사용하다 비정상적으로 종료되면 임시 저장파일이 생김.(.xxx.swp) 
+다시 vim을 열기위해 rm .xxx.swp 해서 지워야됨
+
+
+
+
+
+
+<configuration>
+        <property>
+                <name>mapred.job.tracker</name>
+                <value>localhost:62351</value>
+        </property>
+</configuration>
