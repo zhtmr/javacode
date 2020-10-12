@@ -1,12 +1,14 @@
 
-k
-java:S1192E"PDefine a constant instead of duplicating this literal "ï¿½ï¿½ï¿½ï¿½ : " 3 times.(Óœİùÿÿÿÿ
-o	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(¨˜ƒ¯
-m	java:S116
-"XRename this field "FILEOPENTITLE" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(íºıó
 h	java:S116"SRename this field "FILEPATH" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Œúù‚
 7
 java:S1170
 "!Make this final field static too.(íºıó
 7
 java:S1170"!Make this final field static too.(Œúù‚
+o	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(¨˜ƒ¯
+k
+java:S1192S"PDefine a constant instead of duplicating this literal "ï¿½ï¿½ï¿½ï¿½ : " 3 times.(Óœİùÿÿÿÿ
+O
+java:S1135"2Complete the task associated to this TODO comment.(¡Ä‹ø8¶«ú—Ñ.
+m	java:S116
+"XRename this field "FILEOPENTITLE" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(íºıó

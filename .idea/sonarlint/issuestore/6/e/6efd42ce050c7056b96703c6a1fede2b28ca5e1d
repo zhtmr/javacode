@@ -1,8 +1,8 @@
 
 b
-java:S2095@"LUse try-with-resources or close this "BufferedReader" in a "finally" clause.(´ÓñÊ
-b
 java:S2095"LUse try-with-resources or close this "BufferedWriter" in a "finally" clause.(éî¡š
-o	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(¨˜ƒ¯
 Z
 java:S2147H"DCombine this catch with the one at line 70, which has the same body.(ï­£Ä
+b
+java:S2095@"LUse try-with-resources or close this "BufferedReader" in a "finally" clause.(´ÓñÊ
+o	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(¨˜ƒ¯
