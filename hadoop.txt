@@ -24,7 +24,7 @@ export JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64
 - vim을 사용하다 비정상적으로 종료되면 임시 저장파일이 생김.(.xxx.swp) 
 다시 vim을 열기위해 rm .xxx.swp 해서 지워야됨
 
-
+- hadoop jar [실행파일 위치] [패키지명.클래스명] [입력위치] [출력위치]
 
 
 
@@ -35,3 +35,105 @@ export JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64
                 <value>localhost:62351</value>
         </property>
 </configuration>
+
+
+
+
+manager@master:~$ history
+    1  su sw
+    2  ls -al .ssh/
+    3  ssh-copy-id -i .ssh/id_rsa.pub manager@localhost
+    4  sudo reboot
+    5  cd ~
+    6  sudo vim .bashrc
+    7  source .bashrc
+    8  cat /etc/profile
+    9  sudo vim /usr/local/hadoop/etc/hadoop/hadoop-env.sh
+   10  cat /etc/profile
+   11  ls -l
+   12  ls
+   13  sudo mkdir -p /usr/local/hadoop/tmp
+   14  ls
+   15  ls /usr/local/hadoop/
+   16  sudo chown -R manager:hadoop /usr/local/hadoop/tmp/
+   17  ls -l /usr/local/hadoop/
+   18  ls -l /usr/local/hadoop/tmp/
+   19  sudo vim /usr/local/hadoop/etc/hadoop/core-site.xml
+   20  ls -al
+   21  ls -l
+   22  ls /usr/local/hadoop/etc/hadoop/mapred*
+   23  cp /usr/local/hadoop/etc/hadoop/mapred-site.xml.template /usr/local/hadoop/etc/hadoop/mapred-site.xml
+   24  ls
+   25  ls /usr/local/hadoop/etc/hadoop/mapred*
+   26  sudo vim /usr/local/hadoop/etc/hadoop/mapred-site.xml
+   27  sudo mkdir -p /usr/local/hadoop/hdfs/namenode
+   28  sudo mkdir -p /usr/local/hadoop/hdfs/datanode
+   29  ls
+   30  ls /usr/local/hadoop/
+   31  sudo chown -R manager:hadoop /usr/local/hadoop/
+   32  ls -l /usr/local/hadoop/
+   33  sudo vim /usr/local/hadoop/etc/hadoop/hdfs-site.xml
+   34  ssh-keygen -t rsa
+   35  ssh localhost
+   36  ssh sw@192.168.56.101
+   37  ssh sw@localhost
+   38  whoami
+   39  su sw
+   40  hadoop namenode -format
+   41  start-dfs.sh
+   42  jps
+   43  sudo mkdir -p /usr/local/hadoop/jar
+   44  sudo chown -R manager:hadoop /usr/local/hadoop/jar/
+   45  hadoop fs -mkdir -p /wordcount/input
+   46  hadoop fs -copyFromLocal /usr/local/hadoop/jar/*.txt /wordcount/input
+   47  ls /wordcount/input/
+   48  hadoop jar /usr/local/hadoop/jar/WordCount.jar com.careWordCount.WordCount /wordcount/input /wordcount/output
+   49  hadoop fs -ls /wordcount/output
+   50  hadoop fs -cat /wordcount/output/part-00000
+   51  jps
+   52  hadoop fs -mkdir -p /wordcount/input
+   53  hadoop fs -ls
+   54  hadoop fs -ls /wordcount
+   55  hadoop fs -ls /wordcount/input
+   56  hadoop fs -ls /wordcount/output
+   57  hadoop fs -ls /wordcount/input
+   58  hadoop jar /usr/local/hadoop/jar/WordCount.jar com.jin.WordCount.WordCount /wordcount/input /wordcount/output
+   59  java -version
+   60  cd /usr/local/hadoop/jar/
+   61  ls
+   62  hadoop fs -ls /
+   63  hadoop fs -ls /wordcount
+   64  hadoop fs -ls /wordcount/input
+   65  hodoop jar WordCount.jar com.jin.WordCount.WordCount /wordcount/input /wordcount/output
+   66  hadoop jar WordCount.jar com.jin.WordCount.WordCount /wordcount/input /wordcount/output
+   67  jps
+   68  ifconfig
+   69  readlink -f /usr/bin/java
+   70  sudo halt
+   71  stop-dfs.sh
+   72  rm /usr/local/hadoop/hdfs/datanode/
+   73  rm -rf /usr/local/hadoop/hdfs/datanode/
+   74  rm -rf /usr/local/hadoop/hdfs/namenode/*
+   75  ls /usr/local/hadoop/hdfs/
+   76  ls /usr/local/hadoop/hdfs/namenode/
+   77  ls -l /usr/local/hadoop/hdfs/namenode/
+   78  ls -al /usr/local/hadoop/hdfs/namenode/
+   79  ls /usr/local/hadoop/hdfs/
+   80  sudo vim /etc/hosts
+   81  sudo vim /usr/local/hadoop/etc/hadoop/core-site.xml
+   82  sudo vim /usr/local/hadoop/etc/hadoop/mapred-site.xml
+   83  tar -cvf hadoop.tar /usr/local/hadoop/
+   84  sudo vim /etc/hostname
+   85  sudo /bin/hostname -F /etc/hostname
+   86  sudo reboot
+   87  cat /etc/network/interfaces
+   88  su sw
+   89  sudo halt
+   90  sudo vim /usr/local/hadoop/etc/hadoop/slaves
+   91  sudo vim /usr/local/hadoop/etc/hadoop/hdfs-site.xml
+   92  cat .ssh/id_rsa.pub
+   93  ssh-copy-id -i .ssh/id_rsa.pub manager@slave1
+   94  ssh-copy-id -i .ssh/id_rsa.pub manager@slave2
+   95  ssh-copy-id -i .ssh/id_rsa.pub manager@slave3
+   96  history
+
