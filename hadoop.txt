@@ -137,3 +137,52 @@ manager@master:~$ history
    95  ssh-copy-id -i .ssh/id_rsa.pub manager@slave3
    96  history
 
+- ssh manager@slave1 "cd /home/manager;tar xf hadoop.tar;rm hadoop.tar"
+manager@master에서 slave1에 한번에 명령어 전달&실행
+
+
+master
+ - stop-all.sh
+ - start-all.sh
+안될경우
+master
+ - stop-all.sh
+ - rm -rf /usr/local/hadoop/hdfs/namenode/*
+
+slave 1,2,3
+ - rm -rf /usr/local/hadoop/hdfs/datanode/
+
+master
+ - hadoop namenode -format
+ - start-all.sh
+
+
+
+
+manager@master:~$ jps
+4850 Jps
+4778 ResourceManager
+4634 SecondaryNameNode
+4412 NameNode
+
+manager@slave1:~$ jps
+5155 DataNode
+5477 Jps
+5295 NodeManager
+
+
+manager@slave2:~$ jps
+4576 DataNode
+4718 NodeManager
+4895 Jps
+
+
+manager@slave3:~$ jps
+5905 DataNode
+6230 Jps
+4698 ResourceManager
+4557 Second:qaryNameNode
+6046 NodeManager
+
+
+
