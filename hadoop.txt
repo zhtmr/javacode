@@ -150,7 +150,7 @@ master
  - rm -rf /usr/local/hadoop/hdfs/namenode/*
 
 slave 1,2,3
- - rm -rf /usr/local/hadoop/hdfs/datanode/
+ - rm -rf /usr/local/hadoop/hdfs/datanode/*
 
 master
  - hadoop namenode -format
@@ -159,30 +159,7 @@ master
 
 
 
-manager@master:~$ jps
-4850 Jps
-4778 ResourceManager
-4634 SecondaryNameNode
-4412 NameNode
 
-manager@slave1:~$ jps
-5155 DataNode
-5477 Jps
-5295 NodeManager
-
-
-manager@slave2:~$ jps
-4576 DataNode
-4718 NodeManager
-4895 Jps
-
-
-manager@slave3:~$ jps
-5905 DataNode
-6230 Jps
-4698 ResourceManager
-4557 Second:qaryNameNode
-6046 NodeManager
 
 
 
