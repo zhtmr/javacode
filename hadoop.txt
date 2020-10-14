@@ -157,6 +157,20 @@ master
  - start-all.sh
 
 
+- 하둡테스트 해보기
+start-all.sh
+jps
+hadoop fs -ls /
+hadoop fs -mkdir /input
+hadoop fs -ls /
+cd /usr/local/hadoop/jar/
+ls
+hadoop fs -put CHANGES.txt /input
+hadoop fs -ls /input
+hadoop jar testHadoop.jar com.jin.WordCount.WordCount /input /output
+hadoop fs -ls /output
+hadoop fs -cat /output/part-00000
+
 
 
 
