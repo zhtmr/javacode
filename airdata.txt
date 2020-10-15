@@ -5,5 +5,8 @@
   sed -e '1d' 2008.csv > 2008_sub.csv // 첫째줄 제외해서 저장하기
   head -3 2008_sub.csv
   head 2008_sub.csv > 2008_h10.csv // 10줄파일 새로만들기
-  hadoop fs -put 2008_h10.csv /airdata
+  hadoop fs -put 2008_h10.csv /airdata // input 될 데이터
 
+  hadoop jar WordCount.jar com.jin.Ex01.KeyValueMain /airdata /output1
+  hadoop fs -ls /output1
+ 
