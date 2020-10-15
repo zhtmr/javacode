@@ -1,4 +1,7 @@
-  
+sudo mkdir /usr/local/hadoop/data
+sudo chown -R manager:hadoop /usr/local/hadoop/
+파일질라로 항공데이터 넣기 /usr/local/hadoop/data
+cd /usr/local/hadoop/data/
 
 bzip2 -kd 2008.csv.bz2
 ls
@@ -7,7 +10,7 @@ head 2008.csv // 상위 10줄만 읽어오기
 sed -e '1d' 2008.csv > 2008_sub.csv // 첫째줄 제외해서 저장하기
 head -3 2008_sub.csv
 head 2008_sub.csv > 2008_h10.csv // 10줄파일 새로만들기
-hadoop fs -put 2008_h10.csv /airdata // input 될 데이터
+hadoop fs -put 2008_h10.csv /airdata // /airdata로 input 될 데이터 넣기
 
 hadoop jar WordCount.jar com.jin.Ex01.KeyValueMain /airdata /output1
 hadoop fs -ls /output1
