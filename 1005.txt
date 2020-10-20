@@ -1,0 +1,46 @@
+https://hub.docker.com/r/continuumio/miniconda3
+	- docker pull continuumio/miniconda3
+	- docker run -it continuumio/miniconda3
+	- pip install beautifulsoup4
+	- pip install requests
+	- docker ps -a (컨테이너 id 획득)
+
+
+삭제 : rm -rf /var/lib/apt/lists/*
+
+프로토콜 : https://
+호스트 이름 : newsearch.seoul.go.kr/
+경로 : ksearch/search.do
+?
+데이터 : kwd:%EB%89%B4%EB%94%9C%EC%9D%BC%EC%9E%90%EB%A6%AC
+
+
+https://search.naver.com/search.naver
+?
+sm:top_hty,
+fbm:1,
+ie:utf8,
+query:%EB%B9%85%EB%8D%B0%EC%9D%B4%ED%84%B0
+
+
+
+https://newsearch.seoul.go.kr/ksearch/search.do
+?
+kwd:%EB%89%B4%EB%94%9C%EC%9D%BC%EC%9E%90%EB%A6%AC
+
+
+
+from bs4 import BeautifulSoup
+
+html = """
+<html><body>
+	<h1>스크래핑이란</h1>
+	<p>웹페이지를 분석하는것</p>
+	<p>원하는 부분을 추출하는것</p>
+</body></html>
+"""
+
+soup = BeautifulSoup(html, "html.parser")
+
+print(soup.html.body.h1)
+print(soup.html.body.h1.string)

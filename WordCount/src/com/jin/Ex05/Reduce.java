@@ -23,6 +23,9 @@ public class Reduce extends MapReduceBase implements Reducer<Text, IntWritable, 
 			
 		}
 		
+//		AirlineParser parser = new AirlineParser(key);
+//		int month = parser.getMonth();
+		
 		output.collect(key, new IntWritable(cnt));
 		
 

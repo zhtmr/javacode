@@ -20,10 +20,12 @@ public class Map extends MapReduceBase implements Mapper<LongWritable, Text, Tex
 
 		AirlineParser parser = new AirlineParser(value);
 		int yearInt = parser.getYear();
-		int monthInt = parser.getMonth();
-//		String yearmonth = String.valueOf(yearInt)+"년 "+String.valueOf(monthInt)+"월";
+//		int monthInt = parser.getMonth();
+		String month = String.format("%02d", parser.getMonth());
+		
 		// csv 파일로 만들기
-		String yearmonth = String.valueOf(yearInt)+","+String.valueOf(monthInt)+",";
+//		String yearmonth = String.valueOf(yearInt)+","+String.valueOf(monthInt)+",";
+		String yearmonth = String.valueOf(yearInt)+"년 "+month+"월";
 		
 		output.collect(new Text(yearmonth), new IntWritable(1));
 		

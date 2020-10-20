@@ -1,0 +1,5 @@
+- 하둡에서 monthdata.csv 라는 이름으로 다운받기
+hadoop fs -get /output7/part-00000 monthdata.csv
+- 파일질라 : /home/manager/monthdata.csv 
+- vscode로 monthdata.csv 읽기 : test.py
+
