@@ -27,7 +27,7 @@ public class AirlineParser {
 		dayOfweek = Integer.parseInt(airdata[3]);
 		depTime = getDigitFromStr(airdata[4],SUSPENSIONOFAIRLINE);
 		cancelled = Integer.parseInt(airdata[21]);
-		uniqueCarrier=airdata[14];
+		uniqueCarrier=airdata[8];
 		carrierDelay=getDigitFromStr(airdata[24], SUSPENSIONOFAIRLINE);
 		
 	}
