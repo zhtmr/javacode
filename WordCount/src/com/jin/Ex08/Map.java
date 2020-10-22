@@ -33,7 +33,9 @@ public class Map extends MapReduceBase implements Mapper<LongWritable, Text, Tex
 			throws IOException {
 
 		AirlineParser parser = new AirlineParser(value);
+		// cancelled 값이 0인 것만 output으로 보냄
 		if(parser.getCancelled()==AirlineParser.NONCANCELLED)
+			// 년,월,0~2	1
 			output.collect(getOutputKey(parser), new IntWritable(1)); 
 		
 	}

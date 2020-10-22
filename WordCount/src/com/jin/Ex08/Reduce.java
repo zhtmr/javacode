@@ -26,7 +26,7 @@ public class Reduce extends MapReduceBase implements Reducer<Text, IntWritable, 
 	public void reduce(Text key, Iterator<IntWritable> values, OutputCollector<Text, IntWritable> output, Reporter reporter)
 			throws IOException {
 		
-		
+		// ³â,¿ù,0~2	xxxxxxx
 		output.collect(key, getTotalCnt(values));
 		
 

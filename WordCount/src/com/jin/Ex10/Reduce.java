@@ -1,4 +1,4 @@
-package com.jin.Ex09;
+package com.jin.Ex10;
 
 import java.io.IOException;
 import java.util.Iterator;
@@ -15,10 +15,10 @@ public class Reduce extends MapReduceBase implements Reducer<Text, IntWritable, 
 	
 	
 	private String getTotalCnt(Iterator<IntWritable> values) {
-		int cnt =0;
-		int sum=0;
+		int cnt = 0;
+		int sum = 0;
 		while(values.hasNext()) {
-			sum += values.next().get(); // 지연시간 합
+			sum += values.next().get(); 
 			cnt++;
 		}
 		return sum+","+cnt;
@@ -28,11 +28,11 @@ public class Reduce extends MapReduceBase implements Reducer<Text, IntWritable, 
 	public void reduce(Text key, Iterator<IntWritable> values, OutputCollector<Text, Text> output, Reporter reporter)
 			throws IOException {
 		
-		String[] split = getTotalCnt(values).split(",");
-		int sum = Integer.parseInt(split[0]);
-		int cnt = Integer.parseInt(split[1]);
-		float avg = (float)sum/(float)cnt;
-		output.collect(key, new Text(sum+","+avg));
+//		String[] split = getTotalCnt(values).split(",");
+//		int sum = Integer.parseInt(split[0]);
+//		int cnt = Integer.parseInt(split[1]);
+		
+		output.collect(key, new Text(getTotalCnt(values).split(",")[0]));
 		
 
 	}

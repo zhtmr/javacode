@@ -15,7 +15,7 @@ public class AirlineParser {
 	final static int NONCANCELLED = 0;
 	
 	private int getDigitFromStr(String data, int def) {
-		if("na".equalsIgnoreCase(data)) return def;
+		if("na".equalsIgnoreCase(data)) return def; // -1
 		return Integer.parseInt(data);
 	}
 	
