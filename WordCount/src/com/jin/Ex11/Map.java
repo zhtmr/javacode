@@ -29,6 +29,7 @@ public class Map extends Mapper<LongWritable, Text, Text, IntWritable>{
 		if("dep".equalsIgnoreCase(optSelect)) delay=parser.getDepDelay();
 		else if("arr".equalsIgnoreCase(optSelect)) delay=parser.getArrDelay();
 		
+		// 지연된 항공사, 1
 		if(delay>0)
 			context.write(new Text(parser.getUniqueCarrier()), new IntWritable(1));
 		

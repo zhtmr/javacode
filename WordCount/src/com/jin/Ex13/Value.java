@@ -2,7 +2,7 @@ package com.jin.Ex13;
 
 import org.apache.hadoop.conf.Configured;
 import org.apache.hadoop.fs.Path;
-import org.apache.hadoop.io.IntWritable;
+import org.apache.hadoop.io.LongWritable;
 import org.apache.hadoop.io.Text;
 import org.apache.hadoop.mapreduce.Job;
 import org.apache.hadoop.mapreduce.lib.input.FileInputFormat;
@@ -22,8 +22,11 @@ public class Value extends Configured implements Tool {
 		Job job = Job.getInstance(getConf(), "airline count");
 		job.setJarByClass(Value.class);
 		
+		job.setMapOutputKeyClass(Text.class);
+		job.setMapOutputValueClass(LongWritable.class);
+		
 		job.setOutputKeyClass(Text.class);
-		job.setOutputValueClass(IntWritable.class);
+		job.setOutputValueClass(LongWritable.class);
 		
 		job.setMapperClass(Map.class);
 		job.setReducerClass(Reduce.class);

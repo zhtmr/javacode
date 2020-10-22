@@ -15,6 +15,7 @@ public class Reduce extends Reducer<Text, IntWritable, Text, IntWritable>{
 		for(IntWritable v: values)
 			cnt+=v.get();
 		
+		// Ç×°ø»ç, ÃÑÈ½¼ö
 		ctx.write(key, new IntWritable(cnt));
 		
 	}
