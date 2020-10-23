@@ -16,11 +16,13 @@ public class Reduce extends Reducer<Text, IntWritable, Text, IntWritable>{
 	 */
 	
 	/*
-	 *  전처리 : output을 조건에 따라 여러개로 출력 -> MultipleOutputs
+	 *  전처리 : output을 조건에 따라 여러개로 출력 
+	 *  context.write() 대신 MultipleOutputs.write()
 	 */
 	@Override
 	protected void setup(Reducer<Text, IntWritable, Text, IntWritable>.Context context)
 			throws IOException, InterruptedException {
+		// MultipleOutputs에 context 전달
 		multi = new MultipleOutputs<Text, IntWritable>(context);
 	}
 	
@@ -29,8 +31,11 @@ public class Reduce extends Reducer<Text, IntWritable, Text, IntWritable>{
 		
 		for(IntWritable v : values)
 			cnt += v.get();
-		
-		multi.write(id, key, new IntWritable(cnt));
+		/*
+		 *  /output/arr-r-00000
+		 *  /output/dep-r-00000
+		 */
+		multi.write(id, key, new IntWritable(cnt)); // "arr"/"dep", cmd[1], cnt
 	}
 	
 	@Override
