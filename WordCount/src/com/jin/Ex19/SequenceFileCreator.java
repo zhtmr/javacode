@@ -6,7 +6,7 @@ import org.apache.hadoop.conf.Configured;
 import org.apache.hadoop.fs.Path;
 import org.apache.hadoop.io.IntWritable;
 import org.apache.hadoop.io.LongWritable;
-import org.apache.hadoop.io.SequenceFile.CompressionType;
+import org.apache.hadoop.io.SequenceFile;
 import org.apache.hadoop.io.Text;
 import org.apache.hadoop.io.compress.GzipCodec;
 import org.apache.hadoop.mapred.FileInputFormat;
@@ -63,7 +63,7 @@ public class SequenceFileCreator extends Configured implements Tool {
 		// 시퀀스 파일 압축 설정
 		SequenceFileOutputFormat.setCompressOutput(conf, true);
 		SequenceFileOutputFormat.setOutputCompressorClass(conf, GzipCodec.class);
-		SequenceFileOutputFormat.setOutputCompressionType(conf, CompressionType.BLOCK);
+		SequenceFileOutputFormat.setOutputCompressionType(conf, SequenceFile.CompressionType.BLOCK);
 		
 		JobClient.runJob(conf);
 		return 0;
