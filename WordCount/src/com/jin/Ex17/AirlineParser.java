@@ -1,4 +1,4 @@
-package com.jin.Ex14;
+package com.jin.Ex17;
 
 import org.apache.hadoop.io.Text;
 
@@ -18,9 +18,9 @@ public class AirlineParser {
 	private int depDelay;
 	private int distance;
 	
-	private int WeatherDelay;
+	private int actualElapsedTime;
+	private int CRSElapsedTime;
 
-	
 	final static int SUSPENSIONOFAIRLINE=-1;
 	final static int NONCANCELLED=0;
 	final static int NONAIRFLIGHT=0;
@@ -29,9 +29,9 @@ public class AirlineParser {
 	 * 들어온 값이 1이면 true
 	 * 거짓이면 false를 반환
 	 */
-//	private boolean getBool(int n) {
-//		return n==1?true:false;
-//	}
+	private boolean getBool(int n) {
+		return n==1?true:false;
+	}
 	
 	private boolean getBool(String n) {
 		return "1".contentEquals(n);
@@ -52,6 +52,9 @@ public class AirlineParser {
 		week =Integer.parseInt( airdata[3] );
 		depTime =getDigitFromStr(airdata[4],SUSPENSIONOFAIRLINE);
 		uiqueCarrier = airdata[8];
+		actualElapsedTime = getDigitFromStr(airdata[11], SUSPENSIONOFAIRLINE);
+		CRSElapsedTime = getDigitFromStr(airdata[12], SUSPENSIONOFAIRLINE);
+
 		arrDelay =getDigitFromStr(airdata[14],SUSPENSIONOFAIRLINE);
 		depDelay =getDigitFromStr(airdata[15],SUSPENSIONOFAIRLINE);
 		distance =getDigitFromStr(airdata[18],SUSPENSIONOFAIRLINE);
@@ -62,12 +65,14 @@ public class AirlineParser {
 		tailNum = airdata[10];
 		cancellationcode = airdata[22];
 		diverted =getBool(airdata[23]);
-		
-		WeatherDelay=getDigitFromStr(airdata[25],NONAIRFLIGHT);
 	}
 	
-	int getWeatherDelay() {
-		return WeatherDelay;
+	int getActualElapsedTime() {
+		return actualElapsedTime;
+	}
+
+	int getCRSElapsedTime() {
+		return CRSElapsedTime;
 	}
 
 	int getDistance() {

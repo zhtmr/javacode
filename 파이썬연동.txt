@@ -1,0 +1,50 @@
+
+
+
+- sudo vim mapper.py
+
+#!/usr/bin/python3
+import sys
+
+for line in sys.stdin:
+        columns = line.strip().split(",")
+        outputkey=columns[0]+"."+columns[1]
+        if len(columns)>14 and columns[14].isdigit() and int(columns[14])>0:
+                print('{}\t{}'.format(outputkey,1))
+
+
+
+- sudo vim reducer.py
+
+#!/usr/bin/python3
+import sys
+
+inputkey=None
+inputvalue=0
+outputkey=None
+outputvalue=0
+
+for line in sys.stdin:
+        columns = line.strip().split("\t")
+        inputkey,inputvalue=columns[0],int(columns[1])
+        # 2005.1
+        if outputkey==inputkey:
+                outputvalue+=inputvalue
+        else:
+                if outputkey:
+                        print('{}\t{}'.format(outputkey,outputvalue))
+                #2005.2
+                outputkey=inputkey
+                outputvalue=inputvalue
+
+if outputkey==inputkey:
+        print('{}\t{}'.format(inputkey,outputvalue))
+
+- ls -al 
+mapper.py, reducer.py 권한변경
+-> sudo chown -R manager:hadoop /usr/local/hadoop/
+
+- hadoop jar [스트리밍을 보낼 jar] -input [입력경로] -output [출력경로] -mapper [mapper경로] -reducer [reducer 경로]
+
+
+- hadoop jar ../share/hadoop/tools/lib/hadoop-streaming-2.9.2.jar -input /airdata -output /pyoutput -mapper mapper.py -reducer reducer.py

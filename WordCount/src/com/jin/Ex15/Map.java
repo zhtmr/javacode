@@ -13,9 +13,11 @@ public class Map extends Mapper<LongWritable, Text, Text, IntWritable>{
 			throws IOException, InterruptedException {
 		AirlineParser parser = new AirlineParser(value);
 		
+		// dep:항공사,1
 		if(parser.getDepDelay()>0)
 			context.write(new Text("dep:"+parser.getUiqueCarrier()), 
 					new IntWritable(1));
+		// arr:항공사,1
 		if(parser.getArrDelay()>0)
 			context.write(new Text("arr:"+parser.getUiqueCarrier()), 
 					new IntWritable(1));
