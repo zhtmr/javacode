@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration>
+	<!-- 출력 위치 -->
+	<Appenders>
+		<File name="logFile" fileName="${sys:logFilename}" append='flase'>
+			<PatternLayout pattern="%msg%n"/>
+		</File>
+	</Appenders>
+	
+	<!-- 로그 정보 info. error, debug... -->
+	<Loggers>
+		<Logger name="info" level="INFO" additivity='false'>
+			<AppenderRef ref='logFile'/>
+		</Logger>
+		<Root level='INFO'>
+			<AppenderRef ref='logFile'/>
+		</Root>
+	</Loggers>
+</Configuration>
